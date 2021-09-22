@@ -1,4 +1,5 @@
 @echo off
+chcp 932
 set dir=%~dp0
 
 tasklist /fo csv /nh /fi "IMAGENAME eq Code.exe" | find "Code.exe" > NUL
@@ -12,7 +13,7 @@ if NOT ERRORLEVEL 1 (
 	del /Q %TEMP%\msgbox.vbs
 
 ) ELSE (
-	setlocal enabledelayedexpansion
+
 	"../Ruby/bin/ruby.exe" ./setting/vscodeInstaller.rb %dir:~0,-1%
 	cd ./vscode
 
@@ -22,10 +23,10 @@ if NOT ERRORLEVEL 1 (
 	echo -----------------
 	waitfor dummy /t 10>nul 2>&1 & verify>nul
 	taskkill /im Code.exe
-	endlocal
 
 	echo MsgBox "セットアップが完了しました。",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 	del /Q %TEMP%\msgbox.vbs
+
 )
 
 exit
