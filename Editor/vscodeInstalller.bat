@@ -1,31 +1,32 @@
 @echo off
+chcp 932
 set dir=%~dp0
 
 tasklist /fo csv /nh /fi "IMAGENAME eq Code.exe" | find "Code.exe" > NUL
 
 if NOT ERRORLEVEL 1 (
 
-	rem ƒƒbƒZ[ƒW•\Ž¦
-	echo MsgBox "VSCode ‚ª‹N“®’†‚Å‚·B",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
+	rem ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤º
+	echo MsgBox "VSCode ãŒèµ·å‹•ä¸­ã§ã™ã€‚",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 
-	rem ƒtƒ@ƒCƒ‹íœ
+	rem ãƒ•ã‚¡ã‚¤ãƒ«å‰Šé™¤
 	del /Q %TEMP%\msgbox.vbs
 
 ) ELSE (
-	setlocal enabledelayedexpansion
+
 	"../Ruby/bin/ruby.exe" ./setting/vscodeInstaller.rb %dir:~0,-1%
 	cd ./vscode
 
 	start Code.exe ../../Src
 	echo -----------------
-	echo Ä‹N“®ˆ—’†
+	echo å†èµ·å‹•å‡¦ç†ä¸­
 	echo -----------------
 	waitfor dummy /t 10>nul 2>&1 & verify>nul
 	taskkill /im Code.exe
-	endlocal
-
-	echo MsgBox "ƒZƒbƒgƒAƒbƒv‚ªŠ®—¹‚µ‚Ü‚µ‚½B",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
+  
+	echo MsgBox "ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ãŒå®Œäº†ã—ã¾ã—ãŸã€‚",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 	del /Q %TEMP%\msgbox.vbs
+
 )
 
 exit
