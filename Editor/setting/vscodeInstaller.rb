@@ -68,6 +68,14 @@ def VscodeExtensionsInstall(osType,dir)
       puts '===> ' + line
       end
 
+    #HotFix-#3
+    #公式が対応するまで暫定措置
+    extJsonPath = dir+"/vscode/data/extensions/wingrunr21.vscode-ruby-0.28.0/package.json"
+    fixJsonPath = dir+"/setting/package.json"
+
+    FileUtils.cp(fixJsonPath,extJsonPath)
+    #HotFix-#3 END
+  
   # ファイルの存在は確認してるけどストレートにいけるか不明
   elsif osType == "darwin-universal"
     result += "Visual Studio Code.app/Contents/Resources/app/bin/code --force #{opt.join(' ')}"
