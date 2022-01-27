@@ -60,7 +60,7 @@ def VscodeExtensionsInstall(osType,dir)
   puts "続けて、拡張機能をインストールします。"
 
   result = dir+"/vscode/"
-  opt = ["--install-extension MS-CEINTL.vscode-language-pack-ja","--install-extension rebornix.Ruby","--install-extension MS-vsliveshare.vsliveshare-pack"]
+  opt = ["--install-extension MS-CEINTL.vscode-language-pack-ja","--install-extension rebornix.Ruby"]
 
   if osType == "win32-x64-archive"
     result += "bin/code --force #{opt.join(' ')}"
