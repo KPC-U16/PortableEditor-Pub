@@ -208,7 +208,7 @@ class CHaserConnect
   end
 
   # 命令実行のためのメソッド（釧路大会オリジナル）
-  def order(direction, action)
+  def order(action, direction)
     case action
     when 0 # walk
       case direction
