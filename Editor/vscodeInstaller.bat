@@ -24,7 +24,7 @@ if NOT ERRORLEVEL 1 (
 	waitfor dummy /t 10>nul 2>&1 & verify>nul
 	taskkill /im Code.exe
   
-	echo MsgBox "Conpleted!",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
+	echo MsgBox "Completed!",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 	del /Q %TEMP%\msgbox.vbs
 
 )
