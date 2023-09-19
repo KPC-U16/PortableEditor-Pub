@@ -207,6 +207,56 @@ class CHaserConnect
     return results
   end
 
+  # 命令実行のためのメソッド（釧路大会オリジナル）
+  def order(direction, action)
+    case action
+    when 0 # walk
+      case direction
+      when 2
+        return walkUp
+      when 6
+        return walkRight
+      when 8
+        return walkDown
+      when 4
+        return walkLeft
+      end
+    when 1 # look
+      case direction
+      when 2
+        return lookUp
+      when 6
+        return lookRight
+      when 8
+        return lookDown
+      when 4
+        return lookLeft
+      end
+    when 2 # Search
+      case direction
+      when 2
+        return searchUp
+      when 6
+        return searchRight
+      when 8
+        return searchDown
+      when 4
+        return searchLeft
+      end
+    when 3 # put
+      case direction
+      when 2
+        return putUp
+      when 6
+        return putRight
+      when 8
+        return putDown
+      when 4
+        return putLeft
+      end
+    end
+  end
+
   # 文字列を整数配列に変換
   def parseInt(str)
     results = [9,9,9,9,9,9,9,9,9,9]
