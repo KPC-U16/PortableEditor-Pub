@@ -1,4 +1,4 @@
-#CHaserの行動を数字にまとめる列挙型
+# CHaserの行動を数字にまとめる列挙型
 module CHaserActions
     
     WALK = 0
@@ -9,7 +9,7 @@ module CHaserActions
 end 
 
 
-#CHaserの行動方向とその処理をまとめる列挙型
+# CHaserの行動方向とその処理をまとめる列挙型
 module CHaserDirections
 
     UP = 2
@@ -22,4 +22,14 @@ module CHaserDirections
     end
     
     module_function :Reverse
+end
+
+# サーバから取得できる情報をまとめる列挙型
+module MapInfo
+
+    AISLE = 0
+    CHARACTER = 1
+    BLOCK = 2
+    ITEM = 3
+
 end
