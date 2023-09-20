@@ -290,7 +290,8 @@ if __FILE__ == $0
       break
     end
 
-    values = target.searchUp
+#    values = target.searchUp
+    values = target.order(2, 2)
     if values[0] == 0
       break
     end

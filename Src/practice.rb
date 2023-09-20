@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-require  'CHaserConnect.rb' #呼び出すおまじない
-require  'CHaserTools.rb'
+require 'CHaserConnect.rb' #呼び出すおまじない
+require 'CHaserTools.rb'
 
-include  CHaserActions
-include  CHaserDirections
+include Action
+include Direction
+include MapInfo
 
 # 書き換えない
 target = CHaserConnect.new("prac") # ()の中好きな名前
