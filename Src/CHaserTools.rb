@@ -28,7 +28,7 @@ end
 module MapInfo
 
     AISLE = 0
-    CHARACTER = 1
+    ENEMY = 1
     BLOCK = 2
     ITEM = 3
 
