@@ -1,5 +1,5 @@
-# CHaserの行動を数字にまとめる列挙型
-module CHaserActions
+# 行動を数字にまとめる列挙型(order関数用)
+module Action
     
     WALK = 0
     LOOK = 1
@@ -9,8 +9,8 @@ module CHaserActions
 end 
 
 
-# CHaserの行動方向とその処理をまとめる列挙型
-module CHaserDirections
+# 行動方向とその処理をまとめる列挙型(order関数用)
+module Direction
 
     UP = 2
     LEFT = 4
