@@ -208,7 +208,7 @@ class CHaserConnect
   end
 
   # 命令実行のためのメソッド（釧路大会オリジナル）
-  def order(direction, action)
+  def order(action, direction)
     case action
     when 0 # walk
       case direction
@@ -290,7 +290,8 @@ if __FILE__ == $0
       break
     end
 
-    values = target.searchUp
+#    values = target.searchUp
+    values = target.order(2, 2)
     if values[0] == 0
       break
     end
