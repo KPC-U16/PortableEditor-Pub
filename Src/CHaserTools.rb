@@ -27,7 +27,7 @@ end
 # サーバから取得できる情報をまとめる列挙型
 module MapInfo
 
-    AISLE = 0
+    FLOOR = 0
     ENEMY = 1
     BLOCK = 2
     ITEM = 3
