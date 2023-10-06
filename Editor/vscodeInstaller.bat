@@ -7,7 +7,7 @@ tasklist /fo csv /nh /fi "IMAGENAME eq Code.exe" | find "Code.exe" > NUL
 if NOT ERRORLEVEL 1 (
 
 	rem メッセージ表示
-	echo MsgBox "VSCode が起動中です。",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
+	echo MsgBox "VSCode is running!",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 
 	rem ファイル削除
 	del /Q %TEMP%\msgbox.vbs
@@ -24,7 +24,7 @@ if NOT ERRORLEVEL 1 (
 	waitfor dummy /t 10>nul 2>&1 & verify>nul
 	taskkill /im Code.exe
   
-	echo MsgBox "セットアップが完了しました。",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
+	echo MsgBox "Completed!",vbInformation,"VSCodeInstaller" > %TEMP%\msgbox.vbs & %TEMP%\msgbox.vbs
 	del /Q %TEMP%\msgbox.vbs
 
 )
