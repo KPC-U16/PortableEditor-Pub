@@ -1,0 +1,1 @@
+start /B AsahikawaProcon-Server.exe ./Maps/map_file.map

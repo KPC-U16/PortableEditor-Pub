@@ -1,0 +1,1 @@
+u16asahikawaBot.exe a:127.0.0.1 p:2009 n:botV4
